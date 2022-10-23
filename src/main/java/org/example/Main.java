@@ -24,8 +24,6 @@ public class Main {
                 .build();
         HttpGet request = new HttpGet("https://raw.githubusercontent.com/netology-code/jd-homeworks/master/http/task1/cats");
         CloseableHttpResponse response = httpClient.execute(request);
-
-        ObjectMapper mapper = new ObjectMapper();
         List<Post> cats = mapper.readValue(response.getEntity().getContent(), new TypeReference<>() {
         });
 
